@@ -7,6 +7,14 @@ import styled from "styled-components";
 const Container = styled.div`
   height: 100vh;
   background-color: purple;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overflow-y: auto;
+  color: white;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 function App() {
   return (
