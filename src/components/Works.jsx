@@ -24,17 +24,40 @@ const Left = styled.div`
   display: flex;
   align-items: center;
 `;
-const List = styled.div`
+const List = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 20px;
 `;
-const ListItem = styled.div`
-  font-size: 75px;
+const ListItem = styled.li`
+  font-size: 73px;
   font-weight: bold;
   color: transparent;
   -webkit-text-stroke: 1px #ffccff;
+  position: relative;
+  cursor: pointer;
+
+  &:after {
+    content: "${(props) => props.text}";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ffccff;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  &:hover {
+    &:after {
+      animation: coloringText 0.5s linear both;
+      @keyframes coloringText {
+        to {
+          width: 100%;
+        }
+      }
+    }
+  }
 `;
 const Right = styled.div`
   flex: 1;
@@ -46,7 +69,7 @@ const Works = () => {
         <Left>
           <List>
             {data.map((item) => (
-              <ListItem key={item} text={item} onClick={() => setWork(item)}>
+              <ListItem key={item} text={item}>
                 {item}
               </ListItem>
             ))}
