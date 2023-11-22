@@ -1,5 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import Web from "./Web";
+import Development from "./Development";
+import Illustration from "./Illustration";
+import ProductDesign from "./ProductDesign";
+import Social from "./Social";
+
 const data = [
   "Web Design",
   "Development",
@@ -63,19 +69,32 @@ const Right = styled.div`
   flex: 1;
 `;
 const Works = () => {
+  const [works, setWorks] = useState("Web Design");
   return (
     <Section>
       <Container>
         <Left>
           <List>
             {data.map((item) => (
-              <ListItem key={item} text={item}>
+              <ListItem key={item} text={item} onClick={() => setWorks(item)}>
                 {item}
               </ListItem>
             ))}
           </List>
         </Left>
-        <Right></Right>
+        <Right>
+          {works === "Web Design" ? (
+            <Web />
+          ) : works === "Development" ? (
+            <Development />
+          ) : works === "Illustration" ? (
+            <Illustration />
+          ) : works === "Product Design" ? (
+            <ProductDesign />
+          ) : (
+            <Social />
+          )}
+        </Right>
       </Container>
     </Section>
   );
