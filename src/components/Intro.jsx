@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
+import { Canvas } from "@react-three/fiber";
+import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei";
 const Section = styled.div`
   height: 100vh;
   scroll-snap-align: start;
@@ -58,8 +60,8 @@ const Right = styled.div`
   position: relative;
 `;
 const Img = styled.img`
-  width: 800px;
-  height: 500px;
+  width: 700px;
+  height: 450px;
   object-fit: contain;
   position: absolute;
   top: 0;
@@ -67,10 +69,10 @@ const Img = styled.img`
   right: 0;
   left: 0;
   margin: auto;
-  animation: animate 2s infinite ease alternate;
+  animation: animate 3s infinite ease alternate;
   @keyframes animate {
     to {
-      transform: translateY(-20px);
+      transform: translateY(-15px);
     }
   }
 `;
@@ -91,6 +93,19 @@ const Intro = () => {
           <Button>Learn More</Button>
         </Left>
         <Right>
+          <Canvas camera={{ fov: 25, position: [5, 5, 5] }}>
+            <OrbitControls enableZoom={false} />
+            <ambientLight intensity={1} />
+            <directionalLight position={[5, 3, 1]} />
+            <Sphere args={[1, 100, 200]} scale={1.28}>
+              <MeshDistortMaterial
+                color="#e600e6"
+                attach="material"
+                distort={0.75}
+                speed={1}
+              />
+            </Sphere>
+          </Canvas>
           <Img src="./img/1.png" />
         </Right>
       </Container>
