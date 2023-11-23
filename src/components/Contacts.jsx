@@ -19,6 +19,9 @@ const Left = styled.div`
   flex: 1;
   justify-content: flex-end;
   align-items: center;
+  @media only screen and (max-width: 768px) {
+    justify-content: center;
+  }
 `;
 
 const Form = styled.div`
@@ -26,6 +29,9 @@ const Form = styled.div`
   flex-direction: column;
   gap: 16px;
   width: 420px;
+  @media only screen and (max-width: 768px) {
+    width: 300px;
+  }
 `;
 
 const Title = styled.h1`
@@ -59,6 +65,9 @@ const Button = styled.button`
 const Right = styled.div`
   display: flex;
   flex: 1;
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Contacts = () => {

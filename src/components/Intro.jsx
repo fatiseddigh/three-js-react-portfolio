@@ -10,6 +10,9 @@ const Section = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  @media only screen and (max-width: 768px) {
+    height: 150vh;
+  }
 `;
 const Container = styled.div`
   height: 100%;
@@ -17,6 +20,15 @@ const Container = styled.div`
   width: 1400px;
   display: flex;
   justify-content: space-between;
+  @media only screen and (max-width: 1200px) {
+    width: 95%;
+  }
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 const Left = styled.div`
   flex: 2;
@@ -24,10 +36,25 @@ const Left = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 20px;
+
+  @media only screen and (max-width: 768px) {
+    flex: 1;
+    align-items: center;
+    height: 100px;
+  }
+  @media only screen and (max-width: 1200px) {
+    flex: 2;
+  }
 `;
 
 const Title = styled.h1`
   font-size: 70px;
+  @media only screen and (max-width: 768px) {
+    text-align: center;
+  }
+  @media only screen and (max-width: 1200px) {
+    font-size: 50px;
+  }
 `;
 const Texts = styled.div`
   display: flex;
@@ -44,6 +71,10 @@ const SubTitle = styled.h2`
 const Desc = styled.p`
   font-size: 20px;
   color: lightgray;
+  @media only screen and (max-width: 768px) {
+    padding: 20px;
+    text-align: center;
+  }
 `;
 const Button = styled.button`
   background-color: #ff00ff;
@@ -58,6 +89,14 @@ const Button = styled.button`
 const Right = styled.div`
   flex: 3;
   position: relative;
+  @media only screen and (max-width: 1200px) {
+    flex: 1;
+    width: 50%;
+  }
+  @media only screen and (max-width: 768px) {
+    flex: 1;
+    width: 100%;
+  }
 `;
 const Img = styled.img`
   width: 700px;
@@ -70,6 +109,12 @@ const Img = styled.img`
   left: 0;
   margin: auto;
   animation: animate 3s infinite ease alternate;
+
+  @media only screen and (max-width: 768px) {
+    width: 400px;
+    height: 400px;
+  }
+
   @keyframes animate {
     to {
       transform: translateY(-15px);

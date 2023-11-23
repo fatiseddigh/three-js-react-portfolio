@@ -19,16 +19,27 @@ const Section = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 768px) {
+    height: 150vh;
+  }
 `;
 const Container = styled.div`
   width: 1400px;
   display: flex;
   justify-content: space-between;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+  }
 `;
 const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
+  @media only screen and (max-width: 768px) {
+    padding: 20px;
+    justify-content: center;
+  }
 `;
 const List = styled.ul`
   list-style: none;
@@ -43,6 +54,14 @@ const ListItem = styled.li`
   -webkit-text-stroke: 1px #ffccff;
   position: relative;
   cursor: pointer;
+  @media only screen and (max-width: 1200px) {
+    font-size: 40px;
+  }
+  @media only screen and (max-width: 768px) {
+    font-size: 24px;
+    color: white;
+    -webkit-text-stroke: 0px;
+  }
 
   &:after {
     content: "${(props) => props.text}";
