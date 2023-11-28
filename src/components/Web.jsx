@@ -1,13 +1,13 @@
 import { OrbitControls, Stage } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React from "react";
-import Imac from "./Imac";
+import Mac from "./Mac";
 
 const Web = () => {
   return (
-    <Canvas camera={{ fov: 15, position: [-20, 10, -30] }}>
+    <Canvas>
       <Stage environment="city" intensity={0.6}>
-        <Imac />
+        <Mac />
       </Stage>
       <OrbitControls enableZoom={false} />
     </Canvas>
